@@ -33,7 +33,7 @@
 	[UIView setAnimationDuration:0.6];
 	
 	modalView.frame = CGRectMake(0, 0, modalView.frame.size.width, modalView.frame.size.height);
-	coverView.alpha = 0.5;
+	coverView.alpha = 0.7;
     
 	[UIView commitAnimations];
 
@@ -68,7 +68,7 @@
 -(CGPoint) offscreenCenter {
     CGPoint offScreenCenter = CGPointZero;
     
-    UIInterfaceOrientation orientation = [[UIDevice currentDevice] orientation];
+    UIInterfaceOrientation orientation = (UIInterfaceOrientation)[[UIDevice currentDevice] orientation];
     CGSize offSize = UIScreen.mainScreen.bounds.size;
     
 	if(orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
