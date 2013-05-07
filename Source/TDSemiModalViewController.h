@@ -12,4 +12,9 @@
 
 @property (nonatomic, strong) UIView *coverView;
 
+@property CGFloat coverViewAlpha;
+@property CGFloat animationDuration;
+@property CGFloat animationDelay;
+
+
 @end

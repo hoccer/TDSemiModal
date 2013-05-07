@@ -12,7 +12,12 @@
 @synthesize coverView;
 
 -(void)viewDidLoad {
+    self.coverViewAlpha = 0.7;
+    self.animationDuration = 0.6;
+    self.animationDelay = 0.7;
+    
     [super viewDidLoad];
+    
 	self.coverView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
 
 	self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -20,6 +25,7 @@
 	coverView.backgroundColor = UIColor.blackColor;
 	self.coverView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
+    [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] init]]; // add non-working pan gesture recognizer to cancel keep MFSideMenu from panning
 }
 
 #pragma mark -
@@ -33,21 +39,5 @@
     [super viewDidUnload];
 	self.coverView = nil;
 }
-
-- (BOOL)canBecomeFirstResponder { return YES; }
-
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"touchesBegan");
-}
-
-- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"touchesMoved");
-    
-}
-
-- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"touchesEnded");
-}
-
 
 @end

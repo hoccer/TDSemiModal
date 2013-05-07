@@ -30,17 +30,17 @@
 	[rootView addSubview:modalView];
 	
     [UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:0.6];
+	[UIView setAnimationDuration:vc.animationDuration];
 	
 	modalView.frame = CGRectMake(0, 0, modalView.frame.size.width, modalView.frame.size.height);
-	coverView.alpha = 0.7;
+	coverView.alpha = vc.coverViewAlpha;
     
 	[UIView commitAnimations];
 
 }
 
 -(void) dismissSemiModalViewController:(TDSemiModalViewController*)vc {
-	double animationDelay = 0.7;
+	double animationDelay = vc.animationDelay;
 	UIView* modalView = vc.view;
 	UIView* coverView = vc.coverView;
     
